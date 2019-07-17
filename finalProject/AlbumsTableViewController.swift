@@ -11,9 +11,13 @@ import UIKit
 class AlbumsTableViewController: UITableViewController {
     
     var shop : Shop? = nil
-
+    
+    var category : [Category] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        category = createCategory()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,30 +26,63 @@ class AlbumsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func createCategory()  -> [Category] {
+        let books = Category()
+        books.name = "Books"
+        
+        let equipment = Category()
+        books.name = "Equipment"
+        
+        let fashion = Category()
+        fashion.name = "Fashion"
+        
+        let food = Category()
+        food.name = "Food"
+        
+        let furniture = Category()
+        furniture.name = "Furniture"
+        
+        let music = Category()
+        music.name = "Music"
+        
+        let technology = Category()
+        technology.name = "Technology"
+        
+        let transportation = Category()
+        transportation.name = "Transporation"
+        
+        let travel = Category()
+        travel.name = "Travel"
+        
+        let other = Category()
+        other.name = "Other"
+        
+        return [books, equipment, fashion, food, furniture, music, technology, transportation, travel, other]
+    }
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return category.count
     }
     
    
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+//    let categories = category[indexPath.row]
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
