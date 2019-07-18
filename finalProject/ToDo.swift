@@ -7,9 +7,9 @@
 //
 
 import UIKit
-class Category {
+class ToDo {
     var name = ""
-
+    var important = false
 
 }
 

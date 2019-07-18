@@ -16,7 +16,7 @@
 		186B4F9D22DFBEA500178C8C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B4F9C22DFBEA500178C8C /* CategoryViewController.swift */; };
 		186B4F9F22DFBEC500178C8C /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B4F9E22DFBEC500178C8C /* AlbumsTableViewController.swift */; };
 		186B4FA122DFBEDF00178C8C /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B4FA022DFBEDF00178C8C /* ItemTableViewController.swift */; };
-		186B4FA322DFD18200178C8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B4FA222DFD18200178C8C /* Category.swift */; };
+		18EA499122E100A5002F4BB7 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA499022E100A5002F4BB7 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		186B4F9C22DFBEA500178C8C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		186B4F9E22DFBEC500178C8C /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 		186B4FA022DFBEDF00178C8C /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
-		186B4FA222DFD18200178C8C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		18EA499022E100A5002F4BB7 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +71,10 @@
 				186B4F9E22DFBEC500178C8C /* AlbumsTableViewController.swift */,
 				186B4F9122DFB80E00178C8C /* Assets.xcassets */,
 				186B4F9322DFB80E00178C8C /* LaunchScreen.storyboard */,
+				186B4F9C22DFBEA500178C8C /* CategoryViewController.swift */,
 				186B4F9622DFB80E00178C8C /* Info.plist */,
 				186B4F8E22DFB80B00178C8C /* finalProject.xcdatamodeld */,
-				186B4F9C22DFBEA500178C8C /* CategoryViewController.swift */,
-				186B4FA222DFD18200178C8C /* Category.swift */,
+				18EA499022E100A5002F4BB7 /* ToDo.swift */,
 			);
 			path = finalProject;
 			sourceTree = "<group>";
@@ -153,10 +153,10 @@
 				186B4F9D22DFBEA500178C8C /* CategoryViewController.swift in Sources */,
 				186B4F8A22DFB80B00178C8C /* ViewController.swift in Sources */,
 				186B4F9022DFB80B00178C8C /* finalProject.xcdatamodeld in Sources */,
+				18EA499122E100A5002F4BB7 /* ToDo.swift in Sources */,
 				186B4F8822DFB80B00178C8C /* AppDelegate.swift in Sources */,
 				186B4FA122DFBEDF00178C8C /* ItemTableViewController.swift in Sources */,
 				186B4F9F22DFBEC500178C8C /* AlbumsTableViewController.swift in Sources */,
-				186B4FA322DFD18200178C8C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

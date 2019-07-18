@@ -12,6 +12,8 @@ class ItemTableViewController: UITableViewController {
 
         var shops : [Shop] = []
     
+    //Joyce was here
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +58,10 @@ class ItemTableViewController: UITableViewController {
                 }
             }
         }
+        
+        
+        
+    
 //MARNIE WAS HERE
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

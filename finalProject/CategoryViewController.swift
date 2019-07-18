@@ -13,6 +13,8 @@ class CategoryViewController: UIViewController, UINavigationControllerDelegate, 
 
     @IBOutlet weak var shopName: UITextField!
     
+    @IBOutlet weak var priceAmount: UITextField!
+    
     @IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ class CategoryViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     let colors = ["Books",
-                  "Equiptment",
+                  "Equipment",
                   "Fashion", "Food", "Furniture", "Music", "Technology", "Transportation", "Travel", "Other"  ]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -48,14 +50,6 @@ class CategoryViewController: UIViewController, UINavigationControllerDelegate, 
 
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

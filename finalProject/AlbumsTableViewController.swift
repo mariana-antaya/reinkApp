@@ -10,123 +10,66 @@ import UIKit
 
 class AlbumsTableViewController: UITableViewController {
     
+    var toDos : [ToDo] = []
     var shop : Shop? = nil
     
-    var category : [Category] = []
+    
+    func createToDos() -> [ToDo] {
+        
+        let swift = ToDo()
+        swift.name = "Books"
+        
+        let dog = ToDo()
+        dog.name = "Equipment"
+        // important is set to false by default
+        let show = ToDo()
+        show.name = "Fashion"
+        
+        let food = ToDo()
+        food.name = "Food"
+        
+        let furn = ToDo()
+        furn.name = "Furniture"
+        
+        let music = ToDo()
+        music.name = "Music"
+        
+        let tech = ToDo()
+        tech.name = "Technology"
+        
+        let trans = ToDo()
+        trans.name = "Transporation"
+        
+        let trav = ToDo()
+        trav.name = "Travel"
+        
+        let other = ToDo()
+        other.name = "Other"
+        
+        return [swift, dog, show, food, furn, music, tech, trans, trav, other]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      toDos = createToDos()
         
-        category = createCategory()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    func createCategory()  -> [Category] {
-        let books = Category()
-        books.name = "Books"
-        
-        let equipment = Category()
-        books.name = "Equipment"
-        
-        let fashion = Category()
-        fashion.name = "Fashion"
-        
-        let food = Category()
-        food.name = "Food"
-        
-        let furniture = Category()
-        furniture.name = "Furniture"
-        
-        let music = Category()
-        music.name = "Music"
-        
-        let technology = Category()
-        technology.name = "Technology"
-        
-        let transportation = Category()
-        transportation.name = "Transporation"
-        
-        let travel = Category()
-        travel.name = "Travel"
-        
-        let other = Category()
-        other.name = "Other"
-        
-        return [books, equipment, fashion, food, furniture, music, technology, transportation, travel, other]
-    }
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return category.count
+        return toDos.count
     }
     
-   
-    }
-
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-//    let categories = category[indexPath.row]
-
+        
+        let toDo = toDos[indexPath.row]
+        
+        if toDo.important {
+            cell.textLabel?.text = "❗️" + toDo.name
+        } else {
+            cell.textLabel?.text = toDo.name
+        }
+        
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+}
