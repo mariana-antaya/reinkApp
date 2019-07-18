@@ -11,8 +11,10 @@ import UIKit
 class AlbumsTableViewController: UITableViewController {
     
     var toDos : [ToDo] = []
+    
     var shop : Shop? = nil
     
+    var identities = [String]()
     
     func createToDos() -> [ToDo] {
         
@@ -52,7 +54,7 @@ class AlbumsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       toDos = createToDos()
-        
+        identities = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,5 +73,12 @@ class AlbumsTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vcName = identities[indexPath.row]
+        let viewController = storyboard?.instantiateViewController(withIdentifier: vcName)
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
 }

@@ -11,23 +11,18 @@ import UIKit
 class ItemTableViewController: UITableViewController {
 
         var shops : [Shop] = []
-    
     //Joyce was here
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
     }
 
     func getShops () {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            if let CoreDataShop = try? context.fetch(Shop.fetchRequest()) as [Shop] {
-                shops = CoreDataShop
+            if let coreDataShop = try? context.fetch(Shop.fetchRequest()) as [Shop] {
+                shops = coreDataShop
                 tableView.reloadData()
             }
         }
@@ -36,8 +31,8 @@ class ItemTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         getShops()
     }
-    // MARK: - Table view data source
-
+    
+    
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
@@ -45,21 +40,29 @@ class ItemTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return shops.count
+        return 10
     }
     
-    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "HELLO"
+        return cell
+        
+    }
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveShopName", sender: shops[indexPath.row])
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveShopName" {
             if let shopView = segue.destination as? AlbumsTableViewController {
-                
+
                 if let shopsToSend = sender as? Shop {
                     shopView.shop = shopsToSend
                 }
             }
         }
-        
-        
+    
+   //Joyce Was Here
         
     
 //MARNIE WAS HERE
@@ -120,3 +123,4 @@ class ItemTableViewController: UITableViewController {
 
     }
 }
+
